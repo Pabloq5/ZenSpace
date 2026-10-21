@@ -1,0 +1,950 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:"SegoeUI",sans-serif;
+background-color:#f8fafc;
+color:#111827;
+}
+
+.dashboard{
+display:flex;
+min-height:100vh;
+}
+
+/*barralateral*/
+
+.barra_lateral{
+width:124px;
+min-height:100vh;
+background-color:#1d3f72;
+color:white;
+padding:12px 6px;
+position:fixed;
+left:0;
+top:0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:5px;
+padding:08px 20px;
+}
+
+.logo h1{
+font-size:16px;
+font-weight:700;
+}
+
+.menu{
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+
+.menu a{
+height:31px;
+display:flex;
+align-items:center;
+gap:8px;
+padding:09px;
+border-radius:4px;
+color:#ffffff;
+text-decoration:none;
+font-size:15px;
+transition:0.2s;
+}
+
+.menu a i{
+font-size:12px;
+}
+
+.menu a:hover{
+background-color:rgba(255,255,255,0.10);
+}
+
+.menu a.active{
+border: 1px solid white;
+background-color:rgba(255,255,255,0.08);
+}
+
+/* CONTENIDO */
+
+.acciones_contenido {
+margin-left:124px;
+width: calc(100% - 124px);
+min-height:100vh;
+}
+
+/* BARRA SUPERIOR */
+
+.barra_superior {
+height:42px;
+background-color:#ffffff;
+border-bottom:1px solid#e5e7eb;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:016px;
+}
+
+.busqueda_general {
+width:278px;
+height:23px;
+border:1px solid#dfe3e8;
+border-radius:3px;
+display:flex;
+align-items:center;
+padding:09px;
+color:#9ca3af;
+}
+
+.busqueda_general i{
+font-size:10px;
+margin-right:7px;
+}
+
+.busqueda_general input{
+border:none;
+outline:none;
+width:100%;
+font-size:12px;
+color:#374151;
+}
+
+.busqueda_general input::placeholder{
+color:#9ca3af;
+}
+
+.opciones_usaurio{
+display:flex;
+align-items:center;
+gap:15px;
+font-size:13px;
+color:#374151;
+}
+
+.notificaciones{
+position:relative;
+font-size:14px;
+color:#64748b;
+}
+
+.notificaciones::after{
+content:"";
+width:4px;
+height:4px;
+background-color:#dc2626;
+border-radius:50%;
+position:absolute;
+top:0;
+right:-1px;
+}
+
+.usario{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.usario i {
+font-size:14px;
+color:#64748b;
+}
+
+.usario span{
+font-size:13px;
+}
+
+.usario .arrow{
+font-size:12px;
+}
+
+/* CONTENIDODELCATÁLOGO */
+
+.contenido {
+padding:15px 16px;
+}
+
+.informacion_cabecera{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+margin-bottom:13px;
+}
+
+.titulo_cabecera h2{
+font-size:16px;
+font-weight:700;
+color:#111827;
+margin-bottom:2px;
+}
+
+.titulo_cabecera p{
+font-size:12px;
+color:#6b7280;
+}
+
+.acciones {
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.buscar_producto{
+width:115px;
+height:25px;
+border:1px solid#dce1e7;
+border-radius:3px;
+display:flex;
+align-items:center;
+padding:07px;
+background:white;
+}
+
+.buscar_producto i{
+color:#64748b;
+font-size:9px;
+margin-right:5px;
+}
+
+.buscar_producto input{
+width:100%;
+border:none;
+outline:none;
+font-size:12px;
+}
+
+.buscar_producto input::placeholder{
+color:#9ca3af;
+}
+
+.btn-add{
+height:25px;
+padding:010px;
+border:none;
+border-radius:3px;
+background-color:#153e75;
+color:white;
+font-size:12px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+.btn-add:hover{
+background-color:#102f59;
+}
+
+.btn-addi{
+font-size:9px;
+}
+
+/* TARJETADELEDITOR */
+
+.card_contenido{
+width:100%;
+min-height:138px;
+background-color:#ffffff;
+border:1px solid#e0e3e7;
+border-radius:4px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+
+.icono_contenido{
+width:28px;
+height:28px;
+border-radius:50%;
+background-color:#f1f6fd;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:9px;
+}
+
+.icono_contenido i{
+color:#153e75;
+font-size:15px;
+}
+
+.icono_contenido h3{
+font-size:10px;
+font-weight:600;
+color:#111827;
+margin-bottom:7px;
+}
+
+.icono_contenido p{
+max-width:300px;
+text-align:center;
+color:#6b7280;
+font-size:8px;
+line-height:1.5;
+}
+
+/* CONTENEDOR DE PEDIDOS */
+
+.contenedor_pedidos {
+width: 100%;
+min-height: 440px;
+background-color: #ffffff;
+border: 1px solid #e0e3e7;
+border-radius: 4px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+
+/* BARRA DE HERRAMIENTAS */
+
+.barra_herramientas {
+height: 42px;
+padding: 0 8px;
+border-bottom: 1px solid #e5e7eb;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.buscador_pedidos {
+width: 155px;
+height: 24px;
+border: 1px solid #d8dde4;
+border-radius: 3px;
+display: flex;
+align-items: center;
+padding: 0 7px;
+}
+
+.buscador_pedidos i {
+font-size: 10px;
+color: #64748b;
+margin-right: 6px;
+}
+
+.buscador_pedidos input {
+width: 100%;
+border: none;
+outline: none;
+font-size: 10px;
+color: #374151;
+}
+
+.buscador_pedidos input::placeholder {
+color: #9ca3af;
+}
+
+.filtros_pedidos {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.boton_filtro {
+height: 24px;
+padding: 0 8px;
+background-color: white;
+border: 1px solid #d8dde4;
+border-radius: 3px;
+color: #374151;
+font-size: 9px;
+cursor: pointer;
+
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.boton_filtro:hover {
+background-color: #f8fafc;
+}
+
+.boton_filtro i {
+font-size: 9px;
+}
+
+/* TABLA */
+
+.contenedor_tabla {
+width: 100%;
+overflow-x: auto;
+flex: 1;
+}
+
+.tabla_pedidos {
+width: 100%;
+border-collapse: collapse;
+table-layout: fixed;
+}
+
+.tabla_pedidos thead {
+background-color: #f8fafc;
+}
+
+.tabla_pedidos th {
+height: 27px;
+padding: 0 11px;
+text-align: left;
+
+border-right: 1px solid #eef0f3;
+border-bottom: 1px solid #e5e7eb;
+
+color: #374151;
+font-size: 13px;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+.tabla_pedidos td {
+height: 27px;
+padding: 0 11px;
+
+border-right: 1px solid #eef0f3;
+border-bottom: 1px solid #e5e7eb;
+
+color: #374151;
+font-size: 11px;
+vertical-align: middle;
+}
+
+.tabla_pedidos th:last-child,
+.tabla_pedidos td:last-child {
+border-right: none;
+}
+
+.tabla_pedidos tbody tr:hover {
+background-color: #fafafa;
+}
+
+
+/* COLUMNAS */
+
+.tabla_pedidos th:nth-child(1),
+.tabla_pedidos td:nth-child(1) {
+width: 10%;
+}
+
+.tabla_pedidos th:nth-child(2),
+.tabla_pedidos td:nth-child(2) {
+width: 18%;
+}
+
+.tabla_pedidos th:nth-child(3),
+.tabla_pedidos td:nth-child(3) {
+width: 14%;
+}
+
+.tabla_pedidos th:nth-child(4),
+.tabla_pedidos td:nth-child(4) {
+width: 14%;
+}
+
+.tabla_pedidos th:nth-child(5),
+.tabla_pedidos td:nth-child(5) {
+width: 14%;
+}
+
+.tabla_pedidos th:nth-child(6),
+.tabla_pedidos td:nth-child(6) {
+width: 18%;
+}
+
+.tabla_pedidos th:nth-child(7),
+.tabla_pedidos td:nth-child(7) {
+width: 12%;
+text-align: center;
+}
+
+
+/* INFORMACIÓN */
+
+.identificador_pedido {
+color: #1d3f72 !important;
+font-weight: 600;
+}
+
+.valor_total {
+color: #111827 !important;
+font-weight: 700;
+}
+
+/* ESTADOS DE PAGO */
+
+.estado_pago {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+min-width: 39px;
+height: 14px;
+
+padding: 0 6px;
+
+border-radius: 10px;
+
+font-size: 10px;
+font-weight: 600;
+}
+
+.aprobado {
+background-color: #dcfce7;
+color: #15803d;
+}
+
+.revisado {
+background-color: #fee2e2;
+color: #dc2626;
+}
+
+.pendiente {
+background-color: #fef3c7;
+color: #b45309;
+}
+
+/* ESTADOS DE LOGÍSTICA */
+
+.logistica {
+color: #374151;
+}
+
+.logistica.entregado {
+color: #16a34a;
+font-weight: 600;
+}
+
+.logistica.preparando {
+color: #d97706;
+}
+
+.logistica.cancelado {
+color: #4b5563;
+}
+
+
+/* ACCIONES */
+
+.acciones_pedido {
+text-align: center;
+}
+
+.boton_accion {
+border: none;
+background: transparent;
+
+color: #94a3b8;
+font-size: 13px;
+
+cursor: pointer;
+
+margin: 0 3px;
+padding: 0;
+}
+
+.boton_accion:hover {
+color: #1d3f72;
+}
+
+/* PIE DE TABLA */
+
+.pie_tabla {
+height: 29px;
+border-top: 1px solid #e5e7eb;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 11px;
+color: #64748b;
+font-size: 10px;
+}
+
+.paginacion {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+
+.boton_pagina {
+width: 17px;
+height: 17px;
+border: 1px solid #dce1e7;
+background-color: white;
+border-radius: 3px;
+color: #64748b;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+font-size: 10px;
+}
+
+.boton_pagina:hover {
+background-color: #f1f5f9;
+}
+
+/* CABECERA DEL DASHBOARD */
+
+.cabecera_dashboard {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+margin-bottom: 14px;
+}
+
+.cabecera_dashboard h2 {
+font-size: 16px;
+color: #111827;
+margin-bottom: 3px;
+}
+
+.cabecera_dashboard p {
+font-size: 12px;
+color: #64748b;
+}
+
+.boton_exportar {
+height: 25px;
+padding: 0 10px;
+background-color: #ffffff;
+border: 1px solid #1f2937;
+border-radius: 3px;
+color: #374151;
+font-size: 12px;
+cursor: pointer;
+}
+
+.boton_exportar:hover {
+background-color: #f8fafc;
+}
+
+
+/* TARJETAS DE INDICADORES */
+
+.tarjetas_indicadores {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+margin-bottom: 12px;
+}
+
+.tarjeta_indicador {
+min-height: 74px;
+background-color: #ffffff;
+border: 1px solid #dfe3e8;
+border-radius: 3px;
+padding: 10px;
+}
+
+.cabecera_tarjeta {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+margin-bottom: 7px;
+}
+
+.icono_indicador {
+width: 22px;
+height: 22px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #f8fafc;
+color: #1d3f72;
+border-radius: 3px;
+font-size: 14px;
+}
+
+.variacion {
+font-size: 12px;
+font-weight: 600;
+}
+
+.variacion.positiva {
+color: #10a35a;
+}
+
+.variacion.negativa {
+color: #ef4444;
+}
+
+.tarjeta_indicador p {
+font-size: 12px;
+color: #64748b;
+
+margin-bottom: 3px;
+}
+
+.tarjeta_indicador h3 {
+font-size: 15px;
+color: #111827;
+}
+
+/* ZONA INFERIOR */
+
+.zona_dashboard {
+display: grid;
+grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+gap: 10px;
+}
+
+/* CONTENEDOR DEL GRÁFICO */
+
+.contenedor_grafico {
+height: 216px;
+background-color: #ffffff;
+border: 1px solid #dfe3e8;
+border-radius: 3px;
+padding: 10px;
+}
+
+.titulo_grafico h3 {
+font-size: 12px;
+color: #111827;
+margin-bottom: 8px;
+}
+
+/* GRÁFICO */
+
+.grafico {
+position: relative;
+height: 140px;
+margin-left: 22px;
+margin-right: 8px;
+}
+
+.grafico_lineas {
+position: absolute;
+width: 100%;
+height: 120px;
+left: 0;
+top: 0;
+overflow: visible;
+}
+
+.linea_grafico {
+position: absolute;
+width: 100%;
+border-top: 1px dotted #e2e8f0;
+left: 0;
+}
+
+.linea_grafico span {
+position: absolute;
+left: -25px;
+top: -4px;
+font-size: 12px;
+color: #94a3b8;
+}
+
+.linea_10000 {
+top: 0;
+}
+
+.linea_7500 {
+top: 30px;
+}
+
+.linea_5000 {
+top: 60px;
+}
+
+.linea_2500 {
+top: 90px;
+}
+
+.linea_0 {
+top: 120px;
+}
+
+.punto_ventas {
+fill: #ffffff;
+stroke: #1d3f72;
+stroke-width: 2;
+}
+
+.punto_redimidos {
+fill: #ffffff;
+stroke: #10b981;
+stroke-width: 2;
+}
+
+/* DÍAS DEL GRÁFICO */
+
+.dias_grafico {
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+justify-content: space-between;
+color: #64748b;
+font-size: 12px;
+}
+
+/* LEYENDA */
+
+.leyenda_grafico {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+margin-top: 1px;
+font-size: 12px;
+color: #64748b;
+}
+
+.leyenda_grafico > div {
+display: flex;
+align-items: center;
+gap: 4px;
+}
+
+.punto_leyenda {
+width: 7px;
+height: 7px;
+
+border-radius: 50%;
+}
+
+.punto_leyenda.ventas {
+background-color: #1d3f72;
+}
+
+.punto_leyenda.redimidos {
+background-color: #10b981;
+}
+
+/* TRANSACCIONES */
+
+.contenedor_transacciones {
+height: 216px;
+background-color: #ffffff;
+border: 1px solid #dfe3e8;
+border-radius: 3px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+.cabecera_transacciones {
+height: 35px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 10px;
+border-bottom: 1px solid #e5e7eb;
+}
+
+.cabecera_transacciones h3 {
+font-size: 12px;
+color: #111827;
+}
+
+.boton_opciones {
+background: transparent;
+border: none;
+color: #94a3b8;
+font-size: 12px;
+cursor: pointer;
+}
+
+/* TRANSACCIÓN */
+
+.transaccion {
+min-height: 38px;
+padding: 6px 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid #eef0f3;
+}
+
+.informacion_transaccion {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+column-gap: 4px;
+row-gap: 2px;
+max-width: 65%;
+}
+
+.informacion_transaccion strong {
+font-size: 12px;
+color: #1d3f72;
+}
+
+.informacion_transaccion span {
+font-size: 12px;
+color: #374151;
+}
+
+.informacion_transaccion small {
+width: 100%;
+font-size: 12px;
+color: #94a3b8;
+}
+
+.detalle_transaccion {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 3px;
+}
+
+.detalle_transaccion strong {
+font-size: 10px;
+color: #111827;
+}
+
+.estado_transaccion {
+padding: 2px 5px;
+border-radius: 8px;
+font-size: 10px;
+font-weight: 600;
+}
+
+.estado_transaccion.aprobado {
+background-color: #dcfce7;
+color: #15803d;
+}
+
+.estado_transaccion.pendiente {
+background-color: #fef3c7;
+color: #b45309;
+}
+
+.estado_transaccion.cancelado {
+background-color: #fee2e2;
+color: #dc2626;
+}
+
+/* VER TRANSACCIONES */
+
+.ver_transacciones {
+margin-top: auto;
+height: 27px;
+border: none;
+border-top: 1px solid #e5e7eb;
+background-color: #ffffff;
+color: #1d3f72;
+font-size: 12px;
+cursor: pointer;
+}
+
+.ver_transacciones:hover {
+background-color: #f8fafc;
+}
+
+/* añadir producto */
+

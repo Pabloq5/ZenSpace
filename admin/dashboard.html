@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZenSpace - Dashboard</title>
+
+<link rel="stylesheet" href="./assets/style.css">
+
+</head>
+<body>
+<div class="desboard">
+
+<aside class="barra_lateral">
+
+    <div class="logo">
+        <h1>ZenSpace</h1>
+    </div>
+
+    <nav class="menu">
+
+        <a href="./dashboard.html" class="active">
+            <i class="bi bi-house-door"></i>
+            <span>Inicio</span>
+        </a>
+
+        <a href="./productos.html">
+            <i class="bi bi-box-seam"></i>
+            <span>Catálogo</span>
+        </a>
+
+        <a href="./pedidos.html">
+            <i class="bi bi-cart3"></i>
+            <span>Pedidos</span>
+        </a>
+
+    </nav>
+</aside>
+
+<main class="acciones_contenido">
+
+    <header class="barra_superior">
+
+        <div class="busqueda_general">
+            <i class="bi bi-search"></i>
+            <input
+                type="text"
+                placeholder="Buscar pedidos, clientes, productos..."
+            >
+        </div>
+
+        <div class="opciones_usaurio">
+
+            <div class="notificaciones">
+                <i class="bi bi-bell"></i>
+            </div>
+
+            <div class="usario">
+                <i class="bi bi-person-circle"></i>
+                <span>Usuario Zen</span>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="contenido">
+
+        <div class="cabecera_dashboard">
+            <div>
+                <h2>
+                    Dashboard Principal
+                </h2>
+                <p>
+                    Resumen general de operaciones y KPIs
+                </p>
+            </div>
+
+            <button class="boton_exportar">
+                <i class="bi bi-download"></i>
+                Exportar Reporte
+            </button>
+        </div>
+
+        <div class="tarjetas_indicadores">
+
+            <div class="tarjeta_indicador">
+
+                <div class="cabecera_tarjeta">
+
+                    <div class="icono_indicador">
+                        <i class="bi bi-currency-dollar"></i>
+                    </div>
+
+                    <span class="variacion positiva">
+                        +14.5% ↗
+                    </span>
+                </div>
+
+                <p>
+                    Ventas del Día
+                </p>
+
+                <h3>
+                    $12,450
+                </h3>
+            </div>
+
+            <div class="tarjeta_indicador">
+
+                <div class="cabecera_tarjeta">
+
+                    <div class="icono_indicador">
+                        <i class="bi bi-clock"></i>
+                    </div>
+
+                    <span class="variacion positiva">
+                        -2.4% ↘
+                    </span>
+                </div>
+                <p>
+                    Pedidos Pendientes
+                </p>
+
+                <h3>
+                    34
+                </h3>
+            </div>
+
+            <div class="tarjeta_indicador">
+
+                <div class="cabecera_tarjeta">
+
+                    <div class="icono_indicador">
+                        <i class="bi bi-exclamation-circle"></i>
+                    </div>
+
+                    <span class="variacion negativa">
+                        +5.1% ↗
+                    </span>
+
+                </div>
+                <p>
+                    Stock Bajo (&lt; 10 und)
+                </p>
+
+                <h3>
+                    12
+                </h3>
+            </div>
+
+            <div class="tarjeta_indicador">
+
+                <div class="cabecera_tarjeta">
+
+                    <div class="icono_indicador">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <span class="variacion positiva">
+                        +28.4% ↗
+                    </span>
+
+                </div>
+                <p>
+                    Nuevos Clientes
+                </p>
+
+                <h3>
+                    128
+                </h3>
+            </div>
+        </div>
+
+        <div class="zona_dashboard">
+
+            <div class="contenedor_grafico">
+
+                <div class="titulo_grafico">
+                    <h3>
+                        Ventas Semanales vs. Puntos Redimidos
+                    </h3>
+                </div>
+
+                <div class="grafico">
+
+                    <div class="linea_grafico linea_10000">
+                        <span>10000</span>
+                    </div>
+
+                    <div class="linea_grafico linea_7500">
+                        <span>7500</span>
+                    </div>
+
+                    <div class="linea_grafico linea_5000">
+                        <span>5000</span>
+                    </div>
+
+                    <div class="linea_grafico linea_2500">
+                        <span>2500</span>
+                    </div>
+
+                    <div class="linea_grafico linea_0">
+                        <span>0</span>
+                    </div>
+
+                    <svg
+                        class="grafico_lineas"
+                        viewBox="0 0 700 220"
+                        preserveAspectRatio="none"
+                    >
+
+                        <polyline
+                            points="45,120 150,140 255,150 360,135 465,150 570,140 675,125"
+                            fill="none"
+                            stroke="#1d3f72"
+                            stroke-width="2"
+                        />
+
+                        <path
+                            d="
+                            M45 140
+                            C90 150 120 160 150 150
+                            C190 135 220 115 255 55
+                            C290 85 325 120 360 120
+                            C395 105 430 90 465 105
+                            C500 115 535 120 570 115
+                            C610 108 640 105 675 100
+                            "
+                            fill="none"
+                            stroke="#10b981"
+                            stroke-width="2"
+                        />
+
+
+                        <!-- PUNTOS VENTAS -->
+
+                        <circle cx="45" cy="120" r="3" class="punto_ventas"/>
+                        <circle cx="150" cy="140" r="3" class="punto_ventas"/>
+                        <circle cx="255" cy="150" r="3" class="punto_ventas"/>
+                        <circle cx="360" cy="135" r="3" class="punto_ventas"/>
+                        <circle cx="465" cy="150" r="3" class="punto_ventas"/>
+                        <circle cx="570" cy="140" r="3" class="punto_ventas"/>
+                        <circle cx="675" cy="125" r="3" class="punto_ventas"/>
+
+
+                        <!-- PUNTOS REDIMIDOS -->
+
+                        <circle cx="45" cy="140" r="3" class="punto_redimidos"/>
+                        <circle cx="150" cy="150" r="3" class="punto_redimidos"/>
+                        <circle cx="255" cy="55" r="3" class="punto_redimidos"/>
+                        <circle cx="360" cy="120" r="3" class="punto_redimidos"/>
+                        <circle cx="465" cy="105" r="3" class="punto_redimidos"/>
+                        <circle cx="570" cy="115" r="3" class="punto_redimidos"/>
+                        <circle cx="675" cy="100" r="3" class="punto_redimidos"/>
+
+                    </svg>
+
+
+                    <!-- DÍAS -->
+
+                    <div class="dias_grafico">
+
+                        <span>Lun</span>
+                        <span>Mar</span>
+                        <span>Mié</span>
+                        <span>Jue</span>
+                        <span>Vie</span>
+                        <span>Sáb</span>
+                        <span>Dom</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LEYENDA -->
+
+                <div class="leyenda_grafico">
+
+                    <div>
+
+                        <span class="punto_leyenda ventas"></span>
+
+                        <span>
+                            Ventas ($)
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="punto_leyenda redimidos"></span>
+
+                        <span>
+                            Puntos Redimidos
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contenedor_transacciones">
+
+                <div class="cabecera_transacciones">
+                    <h3>
+                        Últimas Transacciones
+                    </h3>
+
+                    <button class="boton_opciones">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                </div>
+
+                <div class="transaccion">
+
+                    <div class="informacion_transaccion">
+                        <strong>
+                            #1052
+                        </strong>
+
+                        <span>
+                            Empresa SA
+                        </span>
+
+                        <small>
+                            Hoy, 10:42 AM
+                        </small>
+                    </div>
+
+                    <div class="detalle_transaccion">
+                        <strong>
+                            $1540.00
+                        </strong>
+
+                        <span class="estado_transaccion aprobado">
+                            Aprobado
+                        </span>
+                    </div>
+                </div>
+
+                <div class="transaccion">
+
+                    <div class="informacion_transaccion">
+                        <strong>
+                            #1053
+                        </strong>
+
+                        <span>
+                            Roberto Gómez
+                        </span>
+
+                        <small>
+                            Hoy, 09:15 AM
+                        </small>
+                    </div>
+
+
+                    <div class="detalle_transaccion">
+                        <strong>
+                            $320.50
+                        </strong>
+
+                        <span class="estado_transaccion pendiente">
+                            Pendiente
+                        </span>
+                    </div>
+                </div>
+
+                <div class="transaccion">
+
+                    <div class="informacion_transaccion">
+                        <strong>
+                            #1054
+                        </strong>
+
+                        <span>
+                            Muebles Zen
+                        </span>
+
+                        <small>
+                            Ayer, 16:30 PM
+                        </small>
+                    </div>
+
+                    <div class="detalle_transaccion">
+                        <strong>
+                            $2100.00
+                        </strong>
+
+                        <span class="estado_transaccion aprobado">
+                            Aprobado
+                        </span>
+                    </div>
+                </div>
+
+                <div class="transaccion">
+
+                    <div class="informacion_transaccion">
+                        <strong>
+                            #1055
+                        </strong>
+
+                        <span>
+                            Ana Martínez
+                        </span>
+
+                        <small>
+                            Ayer, 14:20 PM
+                        </small>
+                    </div>
+
+                    <div class="detalle_transaccion">
+                        <strong>
+                            $85.00
+                        </strong>
+
+                        <span class="estado_transaccion cancelado">
+                            Cancelado
+                        </span>
+                    </div>
+                </div>
+
+                <button class="ver_transacciones">
+                    Ver todas las transacciones
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+</div>
+
+</body>
+</html>

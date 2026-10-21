@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZenSpace - Pedidos</title>
+
+    <link
+        rel="stylesheet" href="./assets/style.css"
+    >
+
+    <!-- Tu CSS que YA contiene el diseño general -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- CSS solamente de esta página -->
+    <link rel="stylesheet" href="pedidos.css">
+</head>
+
+<body>
+
+<div class="desboard">
+
+    <!-- BARRA LATERAL -->
+    <aside class="barra_lateral">
+
+        <div class="logo">
+            <h1>ZenSpace</h1>
+        </div>
+
+        <nav class="menu">
+
+            <a href="./dashboard.html">
+                <i class="bi bi-house-door"></i>
+                <span>Inicio</span>
+            </a>
+
+            <a href="./productos.html">
+                <i class="bi bi-box-seam"></i>
+                <span>Catálogo</span>
+            </a>
+
+            <a href="./pedidos.html" class="active">
+                <i class="bi bi-cart3"></i>
+                <span>Pedidos</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="acciones_contenido">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="barra_superior">
+
+            <div class="busqueda_general">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    placeholder="Buscar pedidos, clientes, productos..."
+                >
+
+            </div>
+
+
+            <div class="opciones_usaurio">
+
+                <div class="notificaciones">
+                    <i class="bi bi-bell"></i>
+                </div>
+
+                <div class="usario">
+
+                    <i class="bi bi-person-circle"></i>
+
+                    <span>Usuario Zen</span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENIDO -->
+        <section class="contenido">
+
+            <div class="contenedor_pedidos">
+
+                <!-- BARRA DE HERRAMIENTAS -->
+                <div class="barra_herramientas">
+
+                    <div class="buscador_pedidos">
+
+                        <i class="bi bi-search"></i>
+
+                        <input
+                            type="text"
+                            placeholder="Buscar por ID o Cliente..."
+                        >
+
+                    </div>
+
+
+                    <div class="filtros_pedidos">
+
+                        <button class="boton_filtro">
+                            <i class="bi bi-funnel"></i>
+                            Fecha
+                        </button>
+
+                        <button class="boton_filtro">
+                            Estado de Pago
+                        </button>
+
+                        <button class="boton_filtro">
+                            Envío
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLA -->
+                <div class="contenedor_tabla">
+
+                    <table class="tabla_pedidos">
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Pago</th>
+                                <th>Logística</th>
+                                <th>Acciones</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td class="identificador_pedido">
+                                    #001
+                                </td>
+
+                                <td>
+                                    Juan Pérez
+                                </td>
+
+                                <td>
+                                    19/04/26
+                                </td>
+
+                                <td class="valor_total">
+                                    $150.00
+                                </td>
+
+                                <td>
+                                    <span class="estado_pago aprobado">
+                                        Aprobado
+                                    </span>
+                                </td>
+
+                                <td class="logistica">
+                                    En camino
+                                </td>
+
+                                <td class="acciones_pedido">
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="identificador_pedido">
+                                    #002
+                                </td>
+
+                                <td>
+                                    Maria G.
+                                </td>
+
+                                <td>
+                                    19/04/26
+                                </td>
+
+                                <td class="valor_total">
+                                    $85.00
+                                </td>
+
+                                <td>
+                                    <span class="estado_pago revisado">
+                                        Revisado
+                                    </span>
+                                </td>
+
+                                <td class="logistica cancelado">
+                                    Cancelado
+                                </td>
+
+                                <td class="acciones_pedido">
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="identificador_pedido">
+                                    #003
+                                </td>
+
+                                <td>
+                                    Empresa SA
+                                </td>
+
+                                <td>
+                                    18/04/26
+                                </td>
+
+                                <td class="valor_total">
+                                    $2450.00
+                                </td>
+
+                                <td>
+                                    <span class="estado_pago aprobado">
+                                        Aprobado
+                                    </span>
+                                </td>
+
+                                <td class="logistica entregado">
+                                    Entregado
+                                </td>
+
+                                <td class="acciones_pedido">
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="identificador_pedido">
+                                    #004
+                                </td>
+
+                                <td>
+                                    Roberto Gómez
+                                </td>
+
+                                <td>
+                                    18/04/26
+                                </td>
+
+                                <td class="valor_total">
+                                    $320.50
+                                </td>
+
+                                <td>
+                                    <span class="estado_pago pendiente">
+                                        Pendiente
+                                    </span>
+                                </td>
+
+                                <td class="logistica preparando">
+                                    Preparando
+                                </td>
+
+                                <td class="acciones_pedido">
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="identificador_pedido">
+                                    #005
+                                </td>
+
+                                <td>
+                                    Ana Martínez
+                                </td>
+
+                                <td>
+                                    17/04/26
+                                </td>
+
+                                <td class="valor_total">
+                                    $120.00
+                                </td>
+
+                                <td>
+                                    <span class="estado_pago aprobado">
+                                        Aprobado
+                                    </span>
+                                </td>
+
+                                <td class="logistica">
+                                    En camino
+                                </td>
+
+                                <td class="acciones_pedido">
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+
+                                    <button class="boton_accion">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PIE DE TABLA -->
+                <div class="pie_tabla">
+
+                    <span>
+                        Mostrando 1 a 5 de 42 registros
+                    </span>
+
+                    <div class="paginacion">
+
+                        <button class="boton_pagina">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+
+                        <span>1 de 10</span>
+
+                        <button class="boton_pagina">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
