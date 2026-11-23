@@ -4,6 +4,8 @@
   "description": "Plataforma de e-commerce de muebles estilo **Japandi** con panel de administración completo.",
   "main": "backend/server.js",
   "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

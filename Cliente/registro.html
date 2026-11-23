@@ -1,58 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenSpace</title>
+    <title>ZenSpace - Crea tu cuenta</title>
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../Cliente/images/logo.png" alt="Logo ZenSpace" width="110" height="35">
+            <a href="index.html"><img src="images/logo.png" alt="Logo ZenSpace" width="110" height="35"></a>
         </div>
         <nav class="menu">
             <a href="index.html" class="link">Inicio</a>
             <a href="catalogo.html" class="link">Catalogo</a>
             <a href="visualizador.html" class="link">Visualizador 3D</a>
         </nav>
-                <nav class="menu_1">
+        <nav class="menu_1">
+            <button type="button" class="btn-favoritos-nav" id="btn-favoritos-nav" title="Mis Favoritos">
+                <i class="bi bi-heart"></i>
+                <span class="badge-favoritos-contador" id="badge-fav-contador">0</span>
+            </button>
             <a href="carrito.html" class="btn-carrito"><i class="bi bi-basket"></i></a>
             <a href="login.html" class="btn-perfil"><i class="bi bi-person"></i></a>
         </nav>
     </header>
 
+<main id="app-contenido">
 <section class="auth">
 
     <div class="auth-form">
         <h1>Crea tu cuenta</h1>
-        <p>Únete para encontrar la armonía en tu hogar.</p>
+        <p>Únete para encontrar la armonía en tu hogar o gestionar tu tienda.</p>
+        
         <form id="form-registro">
-            <label>Nombre Completo</label>
+            <!-- Selector de Tipo de Cuenta -->
+            <label class="etiqueta-seccion-auth">Tipo de Cuenta</label>
+            <div class="tipo-cuenta-selector">
+                <label class="opcion-tipo-cuenta activa" id="opcion-cliente">
+                    <input type="radio" name="tipo_cuenta" value="cliente" checked>
+                    <i class="bi bi-person"></i>
+                    <div>
+                        <strong>Cuenta Personal</strong>
+                        <small>Para explorar, armar looks y comprar productos</small>
+                    </div>
+                </label>
+                <label class="opcion-tipo-cuenta" id="opcion-tienda">
+                    <input type="radio" name="tipo_cuenta" value="tienda">
+                    <i class="bi bi-shop"></i>
+                    <div>
+                        <strong>Cuenta de Tienda</strong>
+                        <small>Para administrar catálogo, inventario y pedidos</small>
+                    </div>
+                </label>
+            </div>
+
+            <label>Nombre o Razón Social</label>
             <div class="input-group">
                 <i class="bi bi-person"></i>
-                <input type="text" id="nombre" placeholder="Tu nombre">
+                <input type="text" id="nombre" placeholder="Tu nombre o el de tu tienda" required>
             </div>
+
             <label>Correo Electrónico</label>
             <div class="input-group">
                 <i class="bi bi-envelope"></i>
-                <input type="email" id="correo" placeholder="ejemplo@correo.com">
+                <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
             </div>
+
             <label>Contraseña</label>
             <div class="input-group">
                 <i class="bi bi-lock"></i>
-                <input type="password" id="password" placeholder="••••••••">
+                <input type="password" id="password" placeholder="••••••••" required>
             </div>
+
             <label>Confirmar Contraseña</label>
             <div class="input-group">
                 <i class="bi bi-lock"></i>
-                <input type="password" id="confirmar-password" placeholder="••••••••">
+                <input type="password" id="confirmar-password" placeholder="••••••••" required>
             </div>
-            <button class="btn-principal">
+
+            <button type="submit" class="btn-principal" id="btn-submit-registro">
                 Registrarme
                 <i class="bi bi-arrow-right"></i>
             </button>
         </form>
+
         <p class="registro">
             ¿Ya tienes una cuenta?
             <a href="login.html">Inicia sesión</a>
@@ -70,7 +102,12 @@
     </div>
 
 </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 ZenSpace. Todos los derechos reservados.</p>
 </footer>
+
 <script src="assets/js/app.js"></script>
 </body>
 </html>

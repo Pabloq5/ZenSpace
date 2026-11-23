@@ -32,10 +32,15 @@ const perfil = await Usuario.findById(req.params.id).select('-contraseña');
 
 router.put('/usuarios/:id', async (req, res) => {
   try {
-    const { nombre, correo } = req.body;
+    const { nombre, correo, avatar } = req.body;
+    const camposActualizar = {};
+    if (nombre !== undefined) camposActualizar.nombre = nombre;
+    if (correo !== undefined) camposActualizar.correo = correo;
+    if (avatar !== undefined) camposActualizar.avatar = avatar;
+
     const actualizado = await Usuario.findByIdAndUpdate(
       req.params.id, 
-      { nombre, correo }, 
+      camposActualizar, 
       { new: true, runValidators: true }
     ).select('-contraseña');
     res.json({ mensaje: 'Perfil actualizado', usuario: actualizado });
@@ -145,7 +150,10 @@ router.get('/pedidos', async (req, res) => {
 
 router.get('/pedidos/usuario/:id', async (req, res) => {
   try {
-    // Busca todos los pedidos donde el campo "usuario" coincida con el ID
+    const mongoose = require('mongoose');
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.json([]);
+    }
     const pedidos = await Pedido.find({ usuario: req.params.id }).sort({ createdAt: -1 });
     res.json(pedidos);
   } catch (error) { res.status(500).json({ error: error.message }); }

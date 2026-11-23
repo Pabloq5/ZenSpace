@@ -9,80 +9,74 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="../Cliente/images/logo.png" alt="Logo ZenSpace" width="110" height="35">
+            <a href="index.html"><img src="images/logo.png" alt="Logo ZenSpace" width="110" height="35"></a>
         </div>
         <nav class="menu">
             <a href="index.html" class="link">Inicio</a>
             <a href="catalogo.html" class="link">Catalogo</a>
             <a href="visualizador.html" class="link">Visualizador 3D</a>
         </nav>
-                <nav class="menu_1">
+        <nav class="menu_1">
+            <button type="button" class="btn-favoritos-nav" id="btn-favoritos-nav" title="Mis Favoritos">
+                <i class="bi bi-heart"></i>
+                <span class="badge-favoritos-contador" id="badge-fav-contador">0</span>
+            </button>
             <a href="carrito.html" class="btn-carrito"><i class="bi bi-basket"></i></a>
             <a href="login.html" class="btn-perfil"><i class="bi bi-person"></i></a>
         </nav>
     </header>
 
+<main id="app-contenido">
     <section class="perfil">
 
-    <div class="contenedor-perfil">
+        <div class="contenedor-perfil">
+            <div class="informacion-perfil">
+                <div class="avatar-zen-wrapper" id="avatar-zen-wrapper" title="Haz clic para subir o cambiar tu foto de perfil">
+                    <div class="avatar-zen" id="avatar-zen-display">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <button type="button" class="btn-editar-foto" id="btn-cambiar-foto" title="Cambiar foto de perfil">
+                        <i class="bi bi-camera-fill"></i>
+                    </button>
+                    <input type="file" id="input-foto-perfil" accept="image/*" style="display:none;">
+                </div>
+                <div class="datos-usuario">
+                    <h2>Usuario Zen</h2>
+                    <p>usuario@zenspace.com</p>
+                    <button class="btn-cerrar">
+                        <i class="bi bi-box-arrow-left"></i>
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
 
-        <div class="informacion-perfil">
-            <img src="../Cliente/images/usuario.jpg" alt="Usuario">
-            <div class="datos-usuario">
-                <h2>Usuario Zen</h2>
-                <p>usuario@zenspace.com</p>
-                <button class="btn-cerrar">
-                <i class="bi bi-box-arrow-left"></i>
-                Cerrar Sesión
-                </button>
+            <div class="contenedor-puntos">
+                <i class="bi bi-star-fill"></i>
+                <h2>0</h2>
+                <p>Puntos Zen</p>
             </div>
         </div>
 
-        <div class="contenedor-puntos">
-            <i class="bi bi-star-fill"></i>
-            <h2>450</h2>
-            <p>Puntos Zen</p>
+        <div class="historial-cabecera" style="display:flex; justify-content:space-between; align-items:center; margin: 45px 0 20px;">
+            <h2 class="titulo-historial" style="margin:0;">
+                Historial de Pedidos
+            </h2>
+            <span id="contador-pedidos" style="font-size:13px; color:#666; background:#EFECE6; padding:4px 12px; border-radius:20px; font-weight:600;"></span>
         </div>
-    </div>
 
-    <h2 class="titulo-historial">
-      Historial de Pedidos
-    </h2>
-
-    <div class="pedido">
-        <div class="informacion-pedido">
-            <div class="icono-pedido">
-              <i class="bi bi-box-seam"></i>
-            </div>
-            <div>
-              <h3>#ORD-001</h3>
-              <p>12 Oct, 2023</p>
+        <div id="contenedor-pedidos-lista">
+            <div style="text-align: center; padding: 40px; color: #888;">
+                <i class="bi bi-arrow-repeat" style="font-size: 26px; animation: spin 1s infinite linear; display: inline-block;"></i>
+                <p style="margin-top: 10px;">Cargando tu historial de pedidos...</p>
             </div>
         </div>
 
-        <span class="estado camino">
-          En camino
-        </span>
-        <strong>$129.99</strong>
-    </div>
+    </section>
+</main>
 
-    <div class="pedido">
-        <div class="informacion-pedido">
-            <div class="icono-pedido">
-                <i class="bi bi-box-seam"></i>
-            </div>
-            <div>
-                <h3>#ORD-002</h3>
-                <p>05 Sep, 2023</p>
-            </div>
-        </div>
-        <span class="estado entregado">
-            Entregado
-        </span>
-        <strong>$450.00</strong>
-    </div>
-
-</section>
+<footer class="footer">
+    <p>&copy; 2026 ZenSpace. Todos los derechos reservados.</p>
+</footer>
 
 <script src="assets/js/app.js"></script>
 

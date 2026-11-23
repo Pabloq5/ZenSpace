@@ -1,8 +1,9 @@
-require('dotenv').config();
-const express = require('express');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, 'config/.env') });
+const express = require('express');
 const cors = require('cors');
 const conectarDB = require('./config/db');
+const seedDB = require('./config/seed');
 const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
@@ -23,6 +24,7 @@ app.use('/api', apiRoutes);
 const iniciarServidor = async () => {
   try {
     await conectarDB();
+    await seedDB();
     app.listen(PORT, () => {
       console.log(` Servidor ZenSpace corriendo en http://localhost:${PORT}`);
     });

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenSpace - Mis Favoritos</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Logo ZenSpace" width="110" height="35"></a>
+        </div>
+        <nav class="menu">
+            <a href="index.html" class="link">Inicio</a>
+            <a href="catalogo.html" class="link">Catalogo</a>
+            <a href="visualizador.html" class="link">Visualizador 3D</a>
+        </nav>
+        <nav class="menu_1">
+            <button type="button" class="btn-favoritos-nav" id="btn-favoritos-nav" title="Mis Favoritos">
+                <i class="bi bi-heart"></i>
+                <span class="badge-favoritos-contador" id="badge-fav-contador">0</span>
+            </button>
+            <a href="carrito.html" class="btn-carrito"><i class="bi bi-basket"></i></a>
+            <a href="login.html" class="btn-perfil"><i class="bi bi-person"></i></a>
+        </nav>
+    </header>
+
+<main id="app-contenido">
+    <section class="catalogo">
+        <div class="header-catalogo">
+            <div>
+                <h1><i class="bi bi-heart-fill" style="color:#C5221F; margin-right:8px; font-size:26px;"></i> Mis Favoritos</h1>
+                <p>Las piezas de diseño Japandi que has guardado con cariño.</p>   
+            </div>
+            <div class="acciones">
+                <a href="catalogo.html" class="btn-ir-catalogo-zen">
+                    <i class="bi bi-plus-lg"></i> Explorar Catálogo
+                </a>
+            </div>
+        </div>
+
+        <div class="grid-catalogo" id="grid-productos-favoritos">
+            <!-- Cargando piezas favoritas... -->
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #888;">
+                <i class="bi bi-arrow-repeat" style="font-size: 24px; animation: spin 1s infinite linear; display:inline-block;"></i>
+                <p style="margin-top: 10px;">Cargando tus piezas favoritas...</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 ZenSpace. Todos los derechos reservados.</p>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

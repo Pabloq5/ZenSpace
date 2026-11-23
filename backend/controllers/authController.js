@@ -7,6 +7,7 @@ const registrar = async (req, res) => {
     const nombre = req.body?.nombre;
     const correo = req.body?.correo;
     const contraseña = req.body?.contraseña || req.body?.password;
+    const rol = (req.body?.rol === 'tienda' || req.body?.tipo === 'tienda') ? 'tienda' : 'cliente';
 
     if (!nombre || !correo || !contraseña) {
       return res.status(400).json({ error: 'Nombre, correo y contraseña son obligatorios' });
@@ -26,12 +27,14 @@ const registrar = async (req, res) => {
     const nuevoUsuario = await Usuario.create({
       nombre,
       correo,
-      contraseña: contraseñaEncriptada
+      contraseña: contraseñaEncriptada,
+      rol: rol
     });
 
     res.status(201).json({ 
       mensaje: 'Usuario registrado exitosamente',
-      idUsuario: nuevoUsuario._id 
+      idUsuario: nuevoUsuario._id,
+      rol: nuevoUsuario.rol
     });
 
   } catch (error) {
@@ -84,7 +87,9 @@ const login = async (req, res) => {
         id: usuario._id,
         nombre: usuario.nombre,
         correo: usuario.correo,
-        puntos: usuario.puntos_zen
+        rol: usuario.rol || 'cliente',
+        puntos: usuario.puntos_zen,
+        avatar: usuario.avatar
       }
     });
 
