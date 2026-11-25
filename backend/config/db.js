@@ -5,7 +5,7 @@ const conectarDB = async () => {
     const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/zenspacebd';
     console.log(`Intentando conectar a MongoDB en: ${uri}...`);
     await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 10000, // Atlas necesita más tiempo que local
+      serverSelectionTimeoutMS: 10000, 
       connectTimeoutMS: 10000
     });
     console.log(' Conectado exitosamente a MongoDB - ZenSpace');

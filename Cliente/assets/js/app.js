@@ -623,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
       return url;
     }
-    // Normalizar rutas relativas a la carpeta images/
+    // Normalizar rutas relativas a la carpeta images
     let limpia = url.replace(/^(\.\.\/)+Cliente\//, '').replace(/^(\.\/)+/, '').replace(/^\/+/, '');
     if (!limpia.startsWith('images/')) {
       limpia = 'images/' + limpia.replace(/^images\//, '');
@@ -678,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Favoritos
     asociarEventosFavoritos(contenedor, listaProductos);
 
-    // 2. Botón rápido "Agregar al carrito"
+    // 2. Botón Agregar al carrito
     contenedor.querySelectorAll('.btn-agregar-carrito, .btn-aggcarrito').forEach(btn => {
       btn.onclick = async (e) => {
         e.stopPropagation();
@@ -705,7 +705,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     });
 
-    // 3. Clic en la tarjeta -> SPA: Abre la plantilla estándar del producto
+    // 3 plantilla estándar del producto
     contenedor.querySelectorAll('.card-producto').forEach(card => {
       card.onclick = (e) => {
         if (e.target.closest('button')) return;
